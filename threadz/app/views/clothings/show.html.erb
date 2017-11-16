@@ -1,0 +1,68 @@
+<h1>Article of Clothing</h1>
+<div>
+    <div>
+        <h2><%= @clothing.title %></h2>
+        <h4><%= link_to("Part of: #{@clothing.outfit.name}", @clothing.outfit) %></h4>
+        <p>Genre: <%= @clothing.genre %></p>
+        <p>Pages: <%= @clothing.pages %></p>
+        <div>
+            <div>
+                <%= link_to("Edit", edit_clothing_path(@clothing)) %>
+                <%= button_to("Delete", @clothing, method: :delete) %>
+            </div>
+        </div>
+    </div>
+    <div>
+      <h2>Comments</h2>
+      <div>
+        <div>
+          <h3><%= @current_user.name %> </h3>
+          <%= form_for(@comment) do |f| %>
+          <h3><%= @current_user.name %></h3>
+          <div>
+            <%= f.text_area :content, :placeholder => "Comment" %>
+          </div>
+          <%= f.hidden_field :user_id %>
+          <%= f.hidden_field :clothing_id, :value => @clothing.id%>
+          <%= f.submit %>
+          <% end %>
+        </div>
+        <div>
+          <% @comments.each do |comment| %>
+            <div>
+              <!-- <h4><%= comment.user.name %></h4> -->
+      <div>
+      <div>
+        <h3>
+          <%= comment.user.name %>
+          <span>
+            <%= comment.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+          </span>
+          </h3>
+          <% if comment.user.id == @current_user.id %>
+            <div>
+            <button  data-id=<%= comment.id %>>Edit</button>
+            <%= button_to("Delete", comment, method: :delete) %>
+            </div>
+            <% end %>
+            </div>
+
+      <p id=<%= "#{comment.id}-info" %>><%= comment.content %></p>
+      <% if comment.user.id == @current_user.id %>
+        <%= form_for(comment, :html => {:class => "form comment-info edit-comment", :id=> "#{comment.id}-form"}) do |f| %>
+          <div class="input-group">
+            <%= f.text_area :content, :placeholder => "Comment" %>
+          </div>
+          <%= f.hidden_field :user_id %>
+          <%= f.hidden_field :clothing_id, :value => @clothing.id%>
+          <%= f.submit %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
+  <div>
+  </div>
+</div>

@@ -4,21 +4,24 @@ has_many :comments, :dependent => :destroy
 
 before_validation :downcase_email
 
-validates :email,
-    presence: true,
-    uniqueness: true,
-    format: {
-      with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/,
-      message: "Invalid email address"
-    }
-
-validates :password_confirmation, presence: true
 validates :password, confirmation: true
-validates :name, presence: true
-validates :image, presence: true, format: {
-  with:  URI::regexp(%w(http https)),
-  message: "please insert a image url"
-}
+validates :email, :password, :password_confirmation, :name, presence: true
+
+# validates :email,
+#     presence: true,
+#     uniqueness: true,
+#     format: {
+#       with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/,
+#       message: "Invalid email address"
+#     }
+#
+# validates :password_confirmation, presence: true
+# validates :password, confirmation: true
+# validates :name, presence: true
+# # validates :image, presence: true, format: {
+# # with:  URI::regexp(%w(http https)),
+# # message: "please insert a image url"
+# # }
 
 private
 

@@ -1,0 +1,10 @@
+<!-- using this search method from a class exercise -->
+<div >
+  <h1>Users</h1>
+  <div>
+    <%= form_tag("/users/search", :remote=> true) do %>
+      <%= text_field_tag(:q, '', :placeholder => "Search") %>
+      <%= submit_tag("Submit") %>
+    <% end %>
+  </div>
+</div>
