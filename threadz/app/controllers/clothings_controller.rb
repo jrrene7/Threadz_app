@@ -1,6 +1,6 @@
 class ClothingsController < ApplicationController
 before_action :require_user
-before_action :logged_in, only: [:index, :show, :new, :update]
+before_action :logged_in, only: [:index, :show, :new, :edit, :update]
 before_action :set_clothing, only: [:show, :edit, :update, :destroy]
 
 def index
@@ -23,12 +23,12 @@ def create
     @clothing.save
     redirect_to @clothing
   else
-    puts @clothing.errors.messages
     redirect_back fallback_location: new_clothing_path
   end
 end
 
 def edit
+  @clothing = Clothing.find(params[:id])
   @outfits = Outfit.all
 end
 
@@ -51,7 +51,7 @@ end
 private
 
 def clothing_params
-  params.require(:clothing).permit(:name, :type, :image, :outfit_id)
+  params.require(:clothing).permit(:name, :kind, :outfit_id)
 end
 
 def set_clothing

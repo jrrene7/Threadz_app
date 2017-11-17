@@ -1,14 +1,16 @@
 <h1>Outfits</h1>
   <div>
-  <%= current_user.name %>
+  <p>Outfits for <%= @current_user.name %> </p>
   <% @outfits.each do |outfit| %>
   <div>
 
   <h2><%= link_to(outfit.name, outfit) %></h2>
-  <%= render "partials/clothing_list", {clothings: outfit.clothing} %>
+  <%= render "partials/clothing_list", {clothings: outfit.clothings} %>
 
   </div>
 
   <% end %>
+
+  <%= link_to("New Outfit", new_outfit_path) %>
 
   </div>

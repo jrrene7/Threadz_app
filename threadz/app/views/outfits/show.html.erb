@@ -5,13 +5,13 @@
   <h2><%= @outfit.name %></h2>
   <p><%= @outfit.occasion %></p>
 </div>
-        <%= render "partials/clothing_list", {clothings: @outfit.clothings} %>
-        <div class="card-footer">
-        <p>Add an article of clothing
-          <%= link_to("Add", new_clothing_path) %></p>
+    <%= render "partials/clothing_list", {clothings: @outfit.clothings} %>
+    <div>
+    <p>Add an article of clothing
+    <%= link_to("Add", new_clothing_path) %></p>
 
   <div>
-          <%= link_to("Edit", edit_outfit_path(@outfit) %>
+          <%= link_to("Edit", edit_outfit_path(@outfit)) %>
           <%= button_to("Delete", @outfit, method: :delete) %>
   </div>
 

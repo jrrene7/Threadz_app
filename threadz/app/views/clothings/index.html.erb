@@ -1,10 +1,11 @@
 <h1>Articles of Clothing</h1>
 
 <div>
-    <% @clothings.each do |c| %>
+    <% @clothings.each do |clothing| %>
 <div>
-    <h2><%= link_to(c.name, clothing) %></h2>
-    <h4><%= link_to("By: #{clothing.outfit.name}", c.outfit) %></h4>
+    <h2><%= link_to(clothing.name, clothing) %></h2>
+    <h4>Outfit: <%= link_to(" #{clothing.outfit.name}", clothing.outfit) %></h4>
     </div>
     <% end %>
+  <%= link_to("Add Clothes", new_clothing_path) %>
 </div>

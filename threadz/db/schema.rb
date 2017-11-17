@@ -10,23 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171114205150) do
+ActiveRecord::Schema.define(version: 20171117151542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clothings", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "kind"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "outfit_id"
+    t.index ["outfit_id"], name: "index_clothings_on_outfit_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "outfit_id"
+    t.bigint "clothing_id"
+    t.bigint "user_id"
+    t.index ["clothing_id"], name: "index_comments_on_clothing_id"
+    t.index ["outfit_id"], name: "index_comments_on_outfit_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "outfits", force: :cascade do |t|
@@ -44,4 +52,8 @@ ActiveRecord::Schema.define(version: 20171114205150) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "clothings", "outfits"
+  add_foreign_key "comments", "clothings"
+  add_foreign_key "comments", "outfits"
+  add_foreign_key "comments", "users"
 end

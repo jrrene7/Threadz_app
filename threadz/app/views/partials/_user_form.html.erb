@@ -1,0 +1,26 @@
+<%= form_for(user) do |f| %>
+  <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+  </div>
+  <div>
+      <%= f.label :user %>
+      <%= f.select(:user_id) do %>
+      <% @users.each do |user| %>
+      <%= content_tag(:option, user.name, value: user.id) %>
+      <% end %>
+      <% end %>
+  </div>
+  <div>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+  </div>
+  <!-- <div>
+      <%= f.label :image %>
+      <%= f.image_tag :image %>
+  </div> -->
+
+  <p> <%= link_to("New User.", new_user_path) %></p>
+
+  <%= f.submit %>
+<% end %>

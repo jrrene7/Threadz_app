@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
 before_action :require_user
-before_action :logged_in, only: [:index, :show, :new, :update]
+before_action :logged_in, only: [:index, :show, :new, :edit, :create, :update]
 before_action :set_outfit, only: [:show, :edit, :update, :destroy]
 
 def index
@@ -27,7 +27,7 @@ def create
 end
 
 def edit
-  @outfits = Outfit.all
+  @outfit = Outfit.find(params[:id])
 end
 
 def update
@@ -49,7 +49,7 @@ end
 private
 
 def outfit_params
-  params.require(:outfit).permit(:name, :occasion)
+  params.require(:outfit).permit(:name, :occasion, :clothing_id)
 end
 
 def set_outfit
