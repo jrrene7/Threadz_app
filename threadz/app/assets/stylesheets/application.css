@@ -171,6 +171,11 @@ background-color: tan;
 
 }
 
+.clothing-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
 /*button {
   border: 2px solid transparent;
   background: #3498DB;
