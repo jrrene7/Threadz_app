@@ -17964,3 +17964,123 @@ Processing by ClothingsController#show as HTML
 Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/clothings/11" for 127.0.0.1 at 2017-11-20 16:25:03 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 11]]
+  Rendered clothings/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 55ms (Views: 47.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:28:27 -0500
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (24.4ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  Rendered outfits/index.html.erb within layouts/application (58.6ms)
+Completed 200 OK in 302ms (Views: 250.5ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:28:31 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (4.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 74ms (Views: 37.1ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/clothings/11" for 127.0.0.1 at 2017-11-20 16:28:34 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 11]]
+  Rendered clothings/show.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 111ms (Views: 68.7ms | ActiveRecord: 15.4ms)
+
+
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" ORDER BY "clothings"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:36:30 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (24.2ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (75.8ms)
+Completed 200 OK in 344ms (Views: 286.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:36:33 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.9ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 95ms (Views: 68.3ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/clothings/11" for 127.0.0.1 at 2017-11-20 16:36:35 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 11]]
+  Rendered clothings/show.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 107ms (Views: 48.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/clothings/11" for 127.0.0.1 at 2017-11-20 16:38:21 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 11]]
+  Rendered clothings/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 99ms (Views: 86.3ms | ActiveRecord: 3.0ms)
+
+

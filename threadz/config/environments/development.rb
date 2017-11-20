@@ -60,8 +60,7 @@ config.paperclip_defaults = {
   :bucket => 'threadz',
   :access_key_id => 'AKIAICR533ACBCZDSXPQ',
   :secret_access_key => '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',
-  :s3_region => 'us-east-2'
-  # :s3_host_name => 's3-us-east-1.amazonaws.com'
+  :s3_host_name => 's3.us-east-2.amazonaws.com'
 }
 }
 end
