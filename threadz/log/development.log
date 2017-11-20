@@ -17138,3 +17138,829 @@ Processing by OutfitsController#index as HTML
 Completed 200 OK in 82ms (Views: 66.1ms | ActiveRecord: 8.7ms)
 
 
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 15:55:54 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (5.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 54ms (Views: 44.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 15:55:56 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 75ms (Views: 46.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png?1511210167" for 127.0.0.1 at 2017-11-20 15:55:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/clothings/3/edit" for 127.0.0.1 at 2017-11-20 15:56:13 -0500
+Processing by ClothingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Clothing Load (0.0ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/edit.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (8.7ms)
+  Rendered clothings/edit.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png?1511210167" for 127.0.0.1 at 2017-11-20 15:56:13 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PATCH "/clothings/3" for 127.0.0.1 at 2017-11-20 15:56:20 -0500
+Processing by ClothingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wJXhwAb2T+mF6GAnVPAp86XrV2xBK3IZ40gHne3E2yMSIVfojNT0zGYdORu8JBp+8i021bi5kHWL6/9TLQ64FQ==", "clothing"=>{"name"=>"Shirt", "kind"=>"black", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fa9df331518 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-79056-1wb7mv7.png>, @original_filename="Screen Shot 2017-11-13 at 6.38.56 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-11-13 at 6.38.56 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Clothing", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/5872733000641d3bef0c1efd8b7181c220171120-79056-1qily88.png'
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "clothings" SET "image_file_name" = $1, "image_updated_at" = $2, "updated_at" = $3 WHERE "clothings"."id" = $4[0m  [["image_file_name", "Screen_Shot_2017-11-13_at_6.38.56_PM.png"], ["image_updated_at", "2017-11-20 20:56:20.775598"], ["updated_at", "2017-11-20 20:56:20.820380"], ["id", 3]]
+[paperclip] deleting /Users/JR/GA projects/Threadz_app/threadz/public/system/clothings/images/000/000/003/original/Screen_Shot_2017-11-13_at_6.38.56_PM.png
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/clothings/3
+Completed 302 Found in 72ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 15:56:20 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (1.7ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 68ms (Views: 56.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png?1511211380" for 127.0.0.1 at 2017-11-20 15:56:20 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/system/clothings/images/000/000/003/medium/Screen_Shot_2017-11-13_at_6.38.56_PM.png"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:00:24 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.7ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (28.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (1.1ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (2.1ms)
+  Rendered outfits/index.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 352ms (Views: 286.2ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:00:27 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.9ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 70ms (Views: 43.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 16:00:29 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 117ms (Views: 70.2ms | ActiveRecord: 22.9ms)
+
+
+Started GET "/clothings/3/edit" for 127.0.0.1 at 2017-11-20 16:00:33 -0500
+Processing by ClothingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Clothing Load (0.0ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/edit.html.erb within layouts/application
+  [1m[36mOutfit Load (4.0ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (15.7ms)
+  Rendered clothings/edit.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 75ms (Views: 62.7ms | ActiveRecord: 5.5ms)
+
+
+Started PATCH "/clothings/3" for 127.0.0.1 at 2017-11-20 16:00:44 -0500
+Processing by ClothingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qFzGFRaGvqd0yNvPfGMxxziDMEY2+BWXijFRYHrrmSd66HA9nKQFgpc9gvOUtwJKb0VR/89q9/vikqmuuiH6EQ==", "clothing"=>{"name"=>"Shirt", "kind"=>"black", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fc7ac517540 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-80346-yj7pld.png>, @original_filename="Screen Shot 2017-10-10 at 8.28.36 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-10-10 at 8.28.36 AM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Clothing", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[AWS S3 400 0.131297 0 retries] head_object(:bucket_name=>"threadz",:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-11-13_at_6.38.56_PM.png") AWS::S3::Errors::BadRequest AWS::S3::Errors::BadRequest
+
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/c677836a2a944a16064f6fab300d32fe20171120-80346-1af2c5l.png'
+  [1m[35mSQL (6.3ms)[0m  [1m[33mUPDATE "clothings" SET "image_file_name" = $1, "image_file_size" = $2, "image_updated_at" = $3, "updated_at" = $4 WHERE "clothings"."id" = $5[0m  [["image_file_name", "Screen_Shot_2017-10-10_at_8.28.36_AM.png"], ["image_file_size", 2881447], ["image_updated_at", "2017-11-20 21:00:44.772167"], ["updated_at", "2017-11-20 21:00:44.815855"], ["id", 3]]
+[paperclip] saving /clothings/images/000/000/003/original/Screen_Shot_2017-10-10_at_8.28.36_AM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.348624 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>2881447,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-10-10 at 8.28.36 AM.png,:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-10-10_at_8.28.36_AM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 729ms (ActiveRecord: 7.6ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:36:in `update'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:02:07 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (20.2ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 336ms (Views: 284.7ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:02:10 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 76ms (Views: 30.8ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 16:02:12 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (1.7ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 94ms (Views: 54.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/clothings/3/edit" for 127.0.0.1 at 2017-11-20 16:02:14 -0500
+Processing by ClothingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Clothing Load (0.0ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/edit.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (8.3ms)
+  Rendered clothings/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 62ms (Views: 52.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/clothings/3" for 127.0.0.1 at 2017-11-20 16:02:22 -0500
+Processing by ClothingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LNSBUSShky6PVP/xkobiyo2Y6iiD9NkXZjwIDEIWSHT+YDd5roMoC2yhps16UtFH2l6LkXpmO3sOn/DCgtwrQg==", "clothing"=>{"name"=>"Shirt", "kind"=>"black", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f9172a42008 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-80525-1edepfs.png>, @original_filename="Screen Shot 2017-10-10 at 8.33.35 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-10-10 at 8.33.35 AM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Clothing", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[AWS S3 400 0.127621 0 retries] head_object(:bucket_name=>"threadz",:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-11-13_at_6.38.56_PM.png") AWS::S3::Errors::BadRequest AWS::S3::Errors::BadRequest
+
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/d7cadbf4939193a0d5abedc1934d78a420171120-80525-tncdu8.png'
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "clothings" SET "image_file_name" = $1, "image_file_size" = $2, "image_updated_at" = $3, "updated_at" = $4 WHERE "clothings"."id" = $5[0m  [["image_file_name", "Screen_Shot_2017-10-10_at_8.33.35_AM.png"], ["image_file_size", 1806640], ["image_updated_at", "2017-11-20 21:02:22.743902"], ["updated_at", "2017-11-20 21:02:22.775730"], ["id", 3]]
+[paperclip] saving /clothings/images/000/000/003/original/Screen_Shot_2017-10-10_at_8.33.35_AM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.349145 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>1806640,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-10-10 at 8.33.35 AM.png,:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-10-10_at_8.33.35_AM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 662ms (ActiveRecord: 3.6ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:36:in `update'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:03:37 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (25.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 319ms (Views: 270.8ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:03:39 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.9ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.1ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.1ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 92ms (Views: 43.7ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 16:03:41 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (1.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 116ms (Views: 72.9ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/clothings/3/edit" for 127.0.0.1 at 2017-11-20 16:03:43 -0500
+Processing by ClothingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Clothing Load (0.0ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/edit.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (12.9ms)
+  Rendered clothings/edit.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 64ms (Views: 56.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/clothings/3" for 127.0.0.1 at 2017-11-20 16:03:52 -0500
+Processing by ClothingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OPLxfCCFWWEu3YcwjZt0Oh5ecRxRn5ceK3YOXsvjcufqRkdUqqfiRM0o3gxlT0e3SZgQpagNdXJD1faQCykR0Q==", "clothing"=>{"name"=>"Shirt", "kind"=>"black", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fd281362508 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-80662-a2szv4.png>, @original_filename="Screen Shot 2017-10-03 at 9.23.28 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-10-03 at 9.23.28 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Update Clothing", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[AWS S3 400 0.169013 0 retries] head_object(:bucket_name=>"threadz",:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-11-13_at_6.38.56_PM.png") AWS::S3::Errors::BadRequest AWS::S3::Errors::BadRequest
+
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/622b0fa2c695472222df09952853245a20171120-80662-tegjwe.png'
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "clothings" SET "image_file_name" = $1, "image_file_size" = $2, "image_updated_at" = $3, "updated_at" = $4 WHERE "clothings"."id" = $5[0m  [["image_file_name", "Screen_Shot_2017-10-03_at_9.23.28_PM.png"], ["image_file_size", 99186], ["image_updated_at", "2017-11-20 21:03:52.471590"], ["updated_at", "2017-11-20 21:03:52.497497"], ["id", 3]]
+[paperclip] saving /clothings/images/000/000/003/original/Screen_Shot_2017-10-03_at_9.23.28_PM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.545559 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>99186,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-10-03 at 9.23.28 PM.png,:key=>"clothings/images/000/000/003/original/Screen_Shot_2017-10-03_at_9.23.28_PM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 922ms (ActiveRecord: 1.7ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:36:in `update'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:08:26 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (23.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 317ms (Views: 270.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:08:30 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 67ms (Views: 36.4ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 16:08:32 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  Rendered clothings/show.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 136ms (Views: 83.4ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/clothings/3/edit" for 127.0.0.1 at 2017-11-20 16:08:36 -0500
+Processing by ClothingsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (1.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Clothing Load (0.0ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/edit.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (10.8ms)
+  Rendered clothings/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 69ms (Views: 57.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:08:39 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 16:08:50 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (6.4ms)
+  Rendered clothings/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 74ms (Views: 66.7ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/clothings" for 127.0.0.1 at 2017-11-20 16:09:11 -0500
+Processing by ClothingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+WNXDJR5fq4anvCCfKKcGIrxLXdDm2oWxWI9LErapyS2anDviQAFxkbF+IzJm4nfsu5fMhXNU/qcX2Us0S1DBA==", "clothing"=>{"name"=>"undershirt", "kind"=>"crewneck", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fda3d523590 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-81006-cpwfcv.png>, @original_filename="Screen Shot 2017-10-10 at 8.31.48 AM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-10-10 at 8.31.48 AM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Clothing"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/aa121ff7f071b98c7025a33062f9d03220171120-81006-1jez58y.png'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/aa121ff7f071b98c7025a33062f9d03220171120-81006-gi6u7s.png'
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "clothings" ("name", "kind", "created_at", "updated_at", "outfit_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "undershirt"], ["kind", "crewneck"], ["created_at", "2017-11-20 21:09:11.835018"], ["updated_at", "2017-11-20 21:09:11.835018"], ["outfit_id", 2], ["image_file_name", "Screen_Shot_2017-10-10_at_8.31.48_AM.png"], ["image_content_type", "image/png"], ["image_file_size", 2801267], ["image_updated_at", "2017-11-20 21:09:11.737658"]]
+[paperclip] saving /clothings/images/000/000/007/original/Screen_Shot_2017-10-10_at_8.31.48_AM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.413471 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>2801267,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-10-10 at 8.31.48 AM.png,:key=>"clothings/images/000/000/007/original/Screen_Shot_2017-10-10_at_8.31.48_AM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 674ms (ActiveRecord: 8.1ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:23:in `create'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:16:16 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (21.5ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 337ms (Views: 288.8ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:16:19 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (2.0ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 78ms (Views: 39.2ms | ActiveRecord: 28.6ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 16:16:23 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (35.7ms)
+  Rendered clothings/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 96ms (Views: 89.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/clothings" for 127.0.0.1 at 2017-11-20 16:16:41 -0500
+Processing by ClothingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGjkTWcxkXyKuSa+wwXuVvEeh6J3VhCrlL3ec/te5EIHYcOuekjqFNbiLrB2PPuRyQH15yEAKUfNgIZzYKkAYg==", "clothing"=>{"name"=>"undershirt", "kind"=>"crewneck", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fb2b182a7d8 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-81476-iolhbp.png>, @original_filename="Screen Shot 2017-10-03 at 9.05.16 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-10-03 at 9.05.16 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Clothing"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/e06a446477feffa0ce692f10a059eeab20171120-81476-1g72jr3.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/e06a446477feffa0ce692f10a059eeab20171120-81476-1h9hnxu.png'
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "clothings" ("name", "kind", "created_at", "updated_at", "outfit_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "undershirt"], ["kind", "crewneck"], ["created_at", "2017-11-20 21:16:41.835809"], ["updated_at", "2017-11-20 21:16:41.835809"], ["outfit_id", 2], ["image_file_name", "Screen_Shot_2017-10-03_at_9.05.16_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 130420], ["image_updated_at", "2017-11-20 21:16:41.797729"]]
+[paperclip] saving /clothings/images/000/000/008/original/Screen_Shot_2017-10-03_at_9.05.16_PM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.375661 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>130420,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-10-03 at 9.05.16 PM.png,:key=>"clothings/images/000/000/008/original/Screen_Shot_2017-10-03_at_9.05.16_PM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 605ms (ActiveRecord: 8.1ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:23:in `create'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:18:06 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (1.0ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (24.7ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 327ms (Views: 272.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:18:09 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (11.1ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 83ms (Views: 41.7ms | ActiveRecord: 27.2ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 16:18:11 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (35.4ms)
+  Rendered clothings/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 69ms (Views: 62.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/clothings" for 127.0.0.1 at 2017-11-20 16:18:23 -0500
+Processing by ClothingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eRYGOTIkCJ8lAanaASV8+GwM85bChmXJj23HUBzlM2s2HyHaL11z93laodS0HGk/VBOB05TQXCXWUJ9QhxLXSw==", "clothing"=>{"name"=>"undershirt", "kind"=>"crewneck", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f904db60708 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-81615-yn21a7.png>, @original_filename="Screen Shot 2017-09-19 at 1.37.52 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-09-19 at 1.37.52 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Clothing"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/0fef8ee502e22749923f403cbef7218c20171120-81615-yp9xwk.png'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/0fef8ee502e22749923f403cbef7218c20171120-81615-1mqobzh.png'
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "clothings" ("name", "kind", "created_at", "updated_at", "outfit_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "undershirt"], ["kind", "crewneck"], ["created_at", "2017-11-20 21:18:23.886617"], ["updated_at", "2017-11-20 21:18:23.886617"], ["outfit_id", 2], ["image_file_name", "Screen_Shot_2017-09-19_at_1.37.52_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 228782], ["image_updated_at", "2017-11-20 21:18:23.850137"]]
+[paperclip] saving /clothings/images/000/000/009/original/Screen_Shot_2017-09-19_at_1.37.52_PM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 403 0.350728 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>228782,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-09-19 at 1.37.52 PM.png,:key=>"clothings/images/000/000/009/original/Screen_Shot_2017-09-19_at_1.37.52_PM.png") AWS::S3::Errors::InvalidAccessKeyId The AWS Access Key Id you provided does not exist in our records.
+
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 567ms (ActiveRecord: 9.0ms)
+
+
+  
+AWS::S3::Errors::InvalidAccessKeyId (The AWS Access Key Id you provided does not exist in our records.):
+  
+(eval):3:in `put_object'
+app/controllers/clothings_controller.rb:23:in `create'
+Started GET "/" for 127.0.0.1 at 2017-11-20 16:22:44 -0500
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/Threadz_app/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (24.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (1.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  Rendered outfits/index.html.erb within layouts/application (75.6ms)
+Completed 200 OK in 356ms (Views: 302.3ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:22:48 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (3.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.8ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 75ms (Views: 38.2ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 16:22:50 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (1.1ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (41.8ms)
+  Rendered clothings/new.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 75ms (Views: 68.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/clothings" for 127.0.0.1 at 2017-11-20 16:22:52 -0500
+Processing by ClothingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GeA3XqINY1JRHP6SUpxBA0FcRhmm1Wr5ZmUHgtT0kI5W6RC9v3QYOg1H9pznpVTEeUM0XPCDUxU/WF+CTwN0rg==", "clothing"=>{"name"=>"un", "kind"=>"", "outfit_id"=>"2"}, "commit"=>"Create Clothing"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO "clothings" ("name", "kind", "created_at", "updated_at", "outfit_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "un"], ["kind", ""], ["created_at", "2017-11-20 21:22:52.801873"], ["updated_at", "2017-11-20 21:22:52.801873"], ["outfit_id", 2]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/clothings/10
+Completed 302 Found in 26ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/clothings/10" for 127.0.0.1 at 2017-11-20 16:22:52 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 10]]
+  Rendered clothings/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 58ms (Views: 31.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/images/medium/missing.png" for 127.0.0.1 at 2017-11-20 16:22:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/clothings/10" for 127.0.0.1 at 2017-11-20 16:22:57 -0500
+Processing by ClothingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lzswLilzLI9XQm+M4czloGANBNXCB1IckFccBZM2i+6y0U2FNkT3jacxswVtrUb8XalgAY1F9Q5WdnZrjOD2Hg==", "id"=>"10"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1[0m  [["clothing_id", 10]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "clothings" WHERE "clothings"."id" = $1[0m  [["id", 10]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/clothings
+Completed 302 Found in 17ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 16:22:57 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 16:23:00 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (1.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (6.9ms)
+  Rendered clothings/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 59ms (Views: 52.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/clothings" for 127.0.0.1 at 2017-11-20 16:23:13 -0500
+Processing by ClothingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IkR+bHpcteQSD8WBZXZXejOG49+Xm6hCUZIMCnR9GbVtTVmPZyXOjE5UzY/QT0K9C5mRmsHNka4Ir1QK74r9lQ==", "clothing"=>{"name"=>"undershirt", "kind"=>"crewneck", "outfit_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f991eeefea8 @tempfile=#<Tempfile:/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/RackMultipart20171120-81926-m6hxro.png>, @original_filename="Screen Shot 2017-09-19 at 1.37.52 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"clothing[image]\"; filename=\"Screen Shot 2017-09-19 at 1.37.52 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Clothing"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/0fef8ee502e22749923f403cbef7218c20171120-81926-17iyy2d.png'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Command :: file -b --mime '/var/folders/9d/pbqykfqn6vnfgn5th57xn2lh0000gn/T/0fef8ee502e22749923f403cbef7218c20171120-81926-latxzb.png'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "clothings" ("name", "kind", "created_at", "updated_at", "outfit_id", "image_file_name", "image_content_type", "image_file_size", "image_updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "undershirt"], ["kind", "crewneck"], ["created_at", "2017-11-20 21:23:13.278382"], ["updated_at", "2017-11-20 21:23:13.278382"], ["outfit_id", 2], ["image_file_name", "Screen_Shot_2017-09-19_at_1.37.52_PM.png"], ["image_content_type", "image/png"], ["image_file_size", 228782], ["image_updated_at", "2017-11-20 21:23:13.236001"]]
+[paperclip] saving /clothings/images/000/000/011/original/Screen_Shot_2017-09-19_at_1.37.52_PM.png
+[aws-sdk-gem-warning] S3 client configured for "us-east-1" but the bucket "threadz" is in"us-east-2"; Please configure the proper region to avoid multiple unecessary redirects and signing attempts
+
+[AWS S3 200 0.611869 0 retries] put_object(:acl=>:public_read,:bucket_name=>"threadz",:content_length=>228782,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: Screen Shot 2017-09-19 at 1.37.52 PM.png,:key=>"clothings/images/000/000/011/original/Screen_Shot_2017-09-19_at_1.37.52_PM.png")  
+
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/clothings/11
+Completed 302 Found in 839ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/clothings/11" for 127.0.0.1 at 2017-11-20 16:23:14 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 11]]
+  Rendered clothings/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 1.4ms)
+
+

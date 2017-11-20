@@ -4,8 +4,8 @@ Rails.application.configure do
     :s3_credentials =>  {
     :bucket => 'threadz',
     :s3_host_name => 's3.amazonaws.com',
-    :access_key_id => 'AKIAJIB5ITWDN552O4BA',
-    :secret_access_key => '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',
+    :access_key_id => 'AKIAICR533ACBCZDSXPQ',
+    :secret_access_key => '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',
     :s3_region => 'us-east-2'
   }
   }

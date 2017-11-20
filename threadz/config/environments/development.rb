@@ -54,15 +54,14 @@ Rails.application.configure do
 
 
 
-# config.paperclip_defaults = {
-#   :storage => :s3,
-#   :s3_credentials =>  {
-#   :bucket => 'threadz',
-#   :s3_host_name => 's3.amazonaws.com',
-#   :access_key_id => 'AKIAJIB5ITWDN552O4BA',
-#   :secret_access_key => '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',
-#   :s3_region => 'US East (Ohio)'
-#   # :s3_host_name => 's3-us-east-1.amazonaws.com'
-# }
-# }
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials =>  {
+  :bucket => 'threadz',
+  :access_key_id => 'AKIAICR533ACBCZDSXPQ',
+  :secret_access_key => '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',
+  :s3_region => 'us-east-2'
+  # :s3_host_name => 's3-us-east-1.amazonaws.com'
+}
+}
 end
