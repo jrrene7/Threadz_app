@@ -17,6 +17,7 @@ end
 
 def create
   @outfit = Outfit.new(outfit_params)
+  @outfit.user_id = current_user.id
   if @outfit.valid?
     @outfit.save
     redirect_to @outfit
