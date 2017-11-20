@@ -1,13 +1,13 @@
-<h1>Article of Clothing</h1>
-<div>
+<h1 class="page-header">Thread</h1>
+<div class="show-page">
     <div>
         <h2><%= @clothing.name %></h2>
-        <h4><%= link_to("Part of: #{@clothing.outfit.name}", @clothing.outfit) %></h4>
+        <h4>Part of: <%= link_to("#{@clothing.outfit.name}", @clothing.outfit) %></h4>
         <p>Kind: <%= @clothing.kind %></p>
-        <p>Image: <%= @clothing.image %></p>
+        <p>Image: <%= image_tag @clothing.image.url(:medium) %> </p>
         <div>
             <div>
-                <%= link_to("Edit", edit_clothing_path(@clothing)) %>
+                <button><%= link_to("Edit", edit_clothing_path(@clothing)) %></button>
                 <%= button_to("Delete", @clothing, method: :delete) %>
             </div>
         </div>
@@ -16,7 +16,8 @@
       <h2>Comments</h2>
       <div>
         <div>
-          <h3><%= @current_user.name %> </h3>
+          <!-- <h3><%= @current_user.name %> </h3> -->
+          <%= flash[:error] %>
           <%= form_for(@comment) do |f| %>
           <h3><%= @current_user.name %></h3>
           <div>
@@ -30,16 +31,15 @@
         <div>
           <% @comments.each do |comment| %>
             <div>
-              <!-- <h4><%= comment.user.name %></h4> -->
       <div>
       <div>
         <h3>
-          <%= comment.user.name %>
+          <%= comment.clothing.outfit.user.name %>
           <span>
             <%= comment.created_at.strftime("%m/%d/%Y %I:%M%p") %>
           </span>
           </h3>
-          <% if comment.user.id == @current_user.id %>
+          <% if comment.clothing.outfit.user.id == @current_user.id %>
             <div>
             <button  data-id=<%= comment.id %>>Edit</button>
             <%= button_to("Delete", comment, method: :delete) %>
@@ -48,7 +48,7 @@
             </div>
 
       <p id=<%= "#{comment.id}-info" %>><%= comment.content %></p>
-      <% if comment.user.id == @current_user.id %>
+      <% if comment.clothing.outfit.user.id == @current_user.id %>
         <%= form_for(comment, :html => {:class => "form comment-info edit-comment", :id=> "#{comment.id}-form"}) do |f| %>
           <div class="input-group">
             <%= f.text_area :content, :placeholder => "Comment" %>

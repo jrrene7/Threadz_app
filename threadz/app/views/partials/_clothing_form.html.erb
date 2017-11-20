@@ -1,9 +1,16 @@
-<%= form_for(clothing) do |f| %>
-  <div>
+
+<%= form_for(clothing, :html => {:class => "form"}) do |f| %>
+  <div class="form-input">
       <%= f.label :name %>
       <%= f.text_field :name %>
   </div>
-  <div>
+
+  <div class="form-input">
+      <%= f.label :kind %>
+      <%= f.text_field :kind %>
+  </div>
+
+  <div class="form-input">
       <%= f.label :outfit %>
       <%= f.select(:outfit_id) do %>
       <% @outfits.each do |outfit| %>
@@ -11,13 +18,11 @@
       <% end %>
       <% end %>
   </div>
-  <div>
-      <%= f.label :kind %>
-      <%= f.text_field :kind %>
+
+  <div class="form-input">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
-
-
-  <p> <%= link_to("New Outfit.", new_outfit_path) %></p>
 
   <%= f.submit %>
 <% end %>

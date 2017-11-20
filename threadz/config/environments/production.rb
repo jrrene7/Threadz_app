@@ -1,4 +1,14 @@
 Rails.application.configure do
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials =>  {
+    :bucket => 'threadz',
+    :s3_host_name => 's3.amazonaws.com',
+    :access_key_id => 'AKIAJIB5ITWDN552O4BA',
+    :secret_access_key => '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',
+    :s3_region => 'us-east-2'
+  }
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

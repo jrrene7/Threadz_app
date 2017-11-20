@@ -1,9 +1,9 @@
-<%= form_for(user) do |f| %>
-  <div>
+<%= form_for(user, :html => {:class => "form"}) do |f| %>
+  <div class="form-input">
       <%= f.label :name %>
       <%= f.text_field :name %>
   </div>
-  <div>
+  <div class="form-input">
       <%= f.label :user %>
       <%= f.select(:user_id) do %>
       <% @users.each do |user| %>
@@ -11,7 +11,7 @@
       <% end %>
       <% end %>
   </div>
-  <div>
+  <div class="form-input">
       <%= f.label :email %>
       <%= f.text_field :email %>
   </div>

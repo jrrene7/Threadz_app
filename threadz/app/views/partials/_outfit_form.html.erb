@@ -1,11 +1,11 @@
-<%= form_for(outfit) do |f| %>
-  <div>
+<%= form_for(outfit, :html => {:class => "form"}) do |f| %>
+  <div class="form-input">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Name" %>
   </div>
-  <div>
+  <div class="form-input">
     <%= f.label :occasion %>
-    <%= f.text_field :occasion %>
+    <%= f.text_field :occasion, placeholder: "Occasion" %>
   </div>
 
   <%= f.submit %>

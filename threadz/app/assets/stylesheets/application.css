@@ -13,3 +13,177 @@
  *= require_tree .
  *= require_self
  */
+
+
+ html, body {
+   height: 100vh;
+   font-family: 'Amaranth', sans-serif;
+
+ }
+
+
+body {
+  margin: 0 auto;
+  font-family: 'Varela Round', sans-serif;
+  /*font-family: 'Gudea', sans-serif;*/
+  /*font-family: 'Amaranth', sans-serif;*/
+
+
+
+}
+
+.title {
+  font-family: 'Lobster', cursive;
+  font-size: 60pt;
+  font-weight: ;
+  text-align: center;
+  border-bottom: 1px solid;
+
+}
+
+.title p {
+  font-size: 20pt;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
+#sidebar {
+  padding-top: 45px;
+  float: left;
+  height: 100vh;
+  width: 15vw;
+  background-color: #ebebeb;
+  text-align: center;
+}
+
+nav {
+ margin-top: 30px;
+}
+
+.top-nav-items {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.container {
+  width: 85vw;
+  margin: 0 auto;
+  background-image: ;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+
+}
+
+.page-header {
+  background: tan;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+
+}
+
+.submit {
+box-sizing: border-box;
+display: block;
+width: 100%;
+border: 1px solid #fff;
+padding: 16px;
+outline: 0;
+font-family: inherit;
+font-size: 0.95em;
+background-color: tan;
+}
+
+.form-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: tan;
+}
+
+
+.login {
+  /*width: 400px;*/
+  margin: 16px auto;
+  font-size: 16px;
+  background: #ebebeb;
+  padding: 12px;
+}
+
+
+.data-list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  /*background-image: url(/assets/curtains.png);*/
+
+}
+
+.data{
+  overflow: hidden;
+  text-align: center;
+  max-width: 600px;
+  margin: 8px;
+  background-color: #fff;
+}
+
+.clothing-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.show-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tile-title {
+
+}
+
+/*button {
+  border: 2px solid transparent;
+  background: #3498DB;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  display: block;
+  width: 250px;
+  margin: 0 auto;
+}*/

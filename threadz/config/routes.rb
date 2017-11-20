@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create, :show]
   resources :outfits
   resources :clothings
-  resources :comments, only: [:create, :update, :destroy]
+  resources :comments
+  # resources :comments, only: [:create, :update, :destroy]
 
 root "outfits#index"
 get "/signup", to: "users#new", as: :signup

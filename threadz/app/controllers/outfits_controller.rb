@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
 before_action :require_user
-before_action :logged_in, only: [:index, :show, :new, :edit, :create, :update]
+before_action :logged_in, only: [:index, :show, :new, :edit, :update]
 before_action :set_outfit, only: [:show, :edit, :update, :destroy]
 
 def index
@@ -17,7 +17,6 @@ end
 
 def create
   @outfit = Outfit.new(outfit_params)
-
   if @outfit.valid?
     @outfit.save
     redirect_to @outfit

@@ -1,18 +1,18 @@
-<h1>Outfit</h1>
-<div>
-  <div>
-<div>
-  <h2><%= @outfit.name %></h2>
-  <p><%= @outfit.occasion %></p>
+<!-- <h1>Outfit</h1> -->
+<div class="show-page">
+  <div class="data">
+<div class="page-header">
+  <p>Fit: <%= @outfit.name %></p>
+  <p>Occasion: <%= @outfit.occasion %></p>
 </div>
     <%= render "partials/clothing_list", {clothings: @outfit.clothings} %>
     <div>
-    <p>Add an article of clothing
-    <%= link_to("Add", new_clothing_path) %></p>
+
+    <p>    <%= link_to("Add a Thread", new_clothing_path) %></p>
 
   <div>
-          <%= link_to("Edit", edit_outfit_path(@outfit)) %>
-          <%= button_to("Delete", @outfit, method: :delete) %>
+        <button>  <%= link_to("Edit", edit_outfit_path(@outfit)) %> </button>
+        <button>  <%= link_to("Delete", @outfit, method: :delete) %> </button>
   </div>
 
   </div>

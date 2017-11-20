@@ -1,6 +1,6 @@
 class ClothingsController < ApplicationController
 before_action :require_user
-before_action :logged_in, only: [:index, :show, :new, :edit, :update]
+before_action :logged_in, only: [:index, :show, :edit, :new, :update]
 before_action :set_clothing, only: [:show, :edit, :update, :destroy]
 
 def index
@@ -48,10 +48,16 @@ def destroy
   end
 end
 
+
+def search
+  @clothings = Clothing.where('LOWER(name) LIKE ?', "%#{params[:q].downcase}%").order(:name)
+  render :json => {:clothings => @clothings}
+end
+
 private
 
 def clothing_params
-  params.require(:clothing).permit(:name, :kind, :outfit_id)
+  params.require(:clothing).permit(:name, :kind, :image, :outfit_id)
 end
 
 def set_clothing

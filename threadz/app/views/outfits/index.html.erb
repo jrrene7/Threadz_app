@@ -1,16 +1,21 @@
-<h1>Outfits</h1>
-  <div>
-  <p>Outfits for <%= @current_user.name %> </p>
+<!-- <h1>Outfits</h1> -->
+  <div class="data-list">
+  <p class="page-header"> <%= @current_user.name %>'s Outfits </p>
+  <!-- <div class="search-bar">
+    <%= form_tag("/users/search", :remote=> true) do %>
+      <%= text_field_tag(:q, '', :placeholder => "Search") %>
+      <%= submit_tag("Submit") %>
+    <% end %>
+  </div> -->
   <% @outfits.each do |outfit| %>
-  <div>
+  <div class="data">
 
-  <h2><%= link_to(outfit.name, outfit) %></h2>
+  <h2 class="tile-title"><%= link_to(outfit.name, outfit) %></h2>
   <%= render "partials/clothing_list", {clothings: outfit.clothings} %>
 
   </div>
 
   <% end %>
+</div>
 
-  <%= link_to("New Outfit", new_outfit_path) %>
-
-  </div>
+<button>  <%= link_to("New Outfit", new_outfit_path) %> </button>
