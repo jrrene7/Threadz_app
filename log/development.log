@@ -18435,3 +18435,85 @@ Processing by ClothingsController#show as HTML
 Completed 200 OK in 57ms (Views: 45.8ms | ActiveRecord: 3.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-20 18:38:09 -0500
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (1.1ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (24.3ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 412ms (Views: 350.8ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 18:38:15 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.7ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (28.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 82ms (Views: 50.4ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/outfits/new" for 127.0.0.1 at 2017-11-20 18:38:17 -0500
+Processing by OutfitsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/new.html.erb within layouts/application
+  Rendered partials/_outfit_form.html.erb (26.9ms)
+  Rendered outfits/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 66ms (Views: 60.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/outfits" for 127.0.0.1 at 2017-11-20 18:38:24 -0500
+Processing by OutfitsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hJyWGrfWtq7FGKgzxKMMQQcaH+C1C7kPUWPyvG8TTeiSOtayjTUrbwjuBPx6oKGSoeEbzUTHDGmqYuF3yl5skw==", "outfit"=>{"name"=>"Friday Night", "occasion"=>"black friday"}, "commit"=>"Create Outfit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "outfits" ("name", "occasion", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Friday Night"], ["occasion", "black friday"], ["created_at", "2017-11-20 23:38:24.650005"], ["updated_at", "2017-11-20 23:38:24.650005"], ["user_id", 3]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/outfits/4
+Completed 302 Found in 29ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/outfits/4" for 127.0.0.1 at 2017-11-20 18:38:24 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  Rendered outfits/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 38ms (Views: 32.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-20 18:38:28 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (9.5ms)
+  Rendered clothings/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.6ms)
+
+
