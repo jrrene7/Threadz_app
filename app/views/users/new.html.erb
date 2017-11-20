@@ -1,0 +1,27 @@
+
+<div class="form-triangle"></div>
+<h1 class="page-header">Sign Up</h1>
+
+<%= form_for(@user) do |f| %>
+  <div class="form-input">
+    <%= f.label :name %> <br>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+
+  <div class="form-input">
+    <%= f.label :email %> <br>
+    <%= f.email_field :email, placeholder: "E-mail" %>
+  </div>
+
+  <div class="form-input">
+    <%= f.label :password %> <br>
+    <%= f.password_field :password, placeholder: "E-mail"%>
+  </div>
+
+  <div class="form-input">
+    <%= f.label :password_confirmation %> <br>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+  </div>
+
+  <%= f.submit("Sign Up") %>
+<% end %>

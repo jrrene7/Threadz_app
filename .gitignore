@@ -1,0 +1,5 @@
+/config/environments/production.rb
+/config/environments/development.rb
+
+
+.env

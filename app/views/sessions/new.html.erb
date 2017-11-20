@@ -1,0 +1,23 @@
+<div class="login">
+
+<div class="form-triangle"></div>
+
+<h1 class="page-header">Log In</h1>
+
+<%= form_for(:session, url: login_path, :html => {:class => "form"}) do |f| %>
+  <div class="form-input">
+    <!-- <%= f.label :email %> -->
+    <%= f.email_field :email, placeholder: "E-mail" %>
+  </div>
+
+  <div class="form-input">
+    <!-- <%= f.label :password %> -->
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <br>
+
+  <div class="">
+  <%= f.submit "Log In" %>
+</div>
+<% end %>
+</div>

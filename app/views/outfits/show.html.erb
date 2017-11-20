@@ -1,0 +1,22 @@
+<!-- <h1>Outfit</h1> -->
+<div class="show-page">
+  <div class="data">
+<div class="page-header">
+  <p>Fit: <%= @outfit.name %></p>
+  <p>Occasion: <%= @outfit.occasion %></p>
+</div>
+    <%= render "partials/clothing_list", {clothings: @outfit.clothings} %>
+    <div>
+
+    <p>    <%= link_to("Add a Thread", new_clothing_path) %></p>
+
+  <div>
+        <button>  <%= link_to("Edit", edit_outfit_path(@outfit)) %> </button>
+        <button>  <%= link_to("Delete", @outfit, method: :delete) %> </button>
+  </div>
+
+  </div>
+
+
+  </div>
+  </div>

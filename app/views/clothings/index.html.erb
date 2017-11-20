@@ -1,0 +1,17 @@
+<div class="data-list">
+<h1 class="page-header">ThreadZ</h1>
+<!-- <div class="search-bar">
+  <%= form_tag("/users/search", :remote=> true) do %>
+    <%= text_field_tag(:q, '', :placeholder => "Search") %>
+    <%= submit_tag("Submit") %>
+  <% end %>
+</div> -->
+
+    <% @clothings.each do |clothing| %>
+<div class="data">
+    <h2 class="tile-title"><%= link_to(clothing.name, clothing) %></h2>
+    <h4>Fit: <%= link_to(" #{clothing.outfit.name}", clothing.outfit) %></h4>
+    </div>
+    <% end %>
+</div>
+<button><%= link_to("Add", new_clothing_path) %></button>
