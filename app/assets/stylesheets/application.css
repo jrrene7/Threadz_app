@@ -80,7 +80,7 @@ margin: 0 auto;
 }
 
 aside {
-  flex: 0 300px;
+  flex: 0 100px;
   font-family: 'Patua One', cursive;
 
 }
@@ -165,6 +165,15 @@ input[type="submit"], button{
   padding: 8px;
 }
 
+.clothing-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.clothing-image-index {
+  max-width: 130px;
+  max-height: 130px;
+}
 
 
 @media screen and (max-width: 1025px) {
@@ -319,9 +328,4 @@ background-color: tan;
 
 /*.tile-title {
 
-}*/
-
-/*.clothing-image {
-  max-width: 300px;
-  max-height: 300px;
 }*/

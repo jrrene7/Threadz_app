@@ -5,12 +5,8 @@
         <h4>Part of: <%= link_to("#{@clothing.outfit.name}", @clothing.outfit) %></h4>
         <p>Kind: <%= @clothing.kind %></p>
         <p>Image: <%= image_tag @clothing.image.url, :class => "clothing-image" %> </p>
-        <div>
-            <div>
                 <button><%= link_to("Edit", edit_clothing_path(@clothing)) %></button>
                 <%= button_to("Delete", @clothing, method: :delete) %>
-            </div>
-        </div>
     </div>
     <div>
       <h2>Comments</h2>

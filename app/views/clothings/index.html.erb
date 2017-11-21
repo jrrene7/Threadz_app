@@ -11,6 +11,7 @@
 <div class="data">
     <h2 class="tile-title"><%= link_to(clothing.name, clothing) %></h2>
     <h4>Fit: <%= link_to(" #{clothing.outfit.name}", clothing.outfit) %></h4>
+    <%= image_tag "#{clothing.image.url}", :class => "clothing-image-index" %> 
     </div>
     <% end %>
 </div>
