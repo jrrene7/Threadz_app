@@ -18517,3 +18517,1982 @@ Processing by ClothingsController#new as HTML
 Completed 200 OK in 57ms (Views: 50.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 19:32:56 -0500
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (22.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 285ms (Views: 238.8ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/outfits/3" for 127.0.0.1 at 2017-11-20 19:33:23 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  Rendered partials/_clothing_list.erb (1.9ms)
+  Rendered outfits/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 89ms (Views: 34.4ms | ActiveRecord: 16.6ms)
+
+
+Started DELETE "/outfits/3" for 127.0.0.1 at 2017-11-20 19:33:26 -0500
+Processing by OutfitsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xI2FvGL6K9IHnjlpQ4tEfPakMzuqjMb811RiQpzc43vhZ/gXfc3w0Pft5eDP6ucgywBX7+XOYe4RdQgsgwqeiw==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (7.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."outfit_id" = $1[0m  [["outfit_id", 3]]
+  [1m[35mSQL (7.3ms)[0m  [1m[31mDELETE FROM "outfits" WHERE "outfits"."id" = $1[0m  [["id", 3]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/outfits
+Completed 302 Found in 32ms (ActiveRecord: 22.8ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 19:33:26 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 47ms (Views: 39.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-20 19:57:40 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 126ms (Views: 108.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/clothings/3" for 127.0.0.1 at 2017-11-20 19:57:42 -0500
+Processing by ClothingsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT  "clothings".* FROM "clothings" WHERE "clothings"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/show.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."clothing_id" = $1 ORDER BY "comments"."created_at" ASC[0m  [["clothing_id", 3]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered clothings/show.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 122ms (Views: 85.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 19:57:52 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (1.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (1.0ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.2ms)
+  [1m[36mClothing Load (1.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (3.0ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.1ms)
+  Rendered outfits/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 108ms (Views: 93.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:02:24 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.2ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  Rendered outfits/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 91ms (Views: 81.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:03:26 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 54ms (Views: 47.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:36:04 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  Rendered outfits/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 135ms (Views: 115.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:37:05 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (5.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 80ms (Views: 70.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:44:30 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.5ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 105ms (Views: 97.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:46:38 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 55ms (Views: 47.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:46:45 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.5ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.9ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  Rendered outfits/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 136ms (Views: 123.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:48:07 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.8ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.9ms)
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (3.6ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  Rendered outfits/index.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 168ms (Views: 151.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:48:09 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (2.0ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (9.8ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  Rendered outfits/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 115ms (Views: 104.9ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 20:59:11 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.3ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  Rendered outfits/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 112ms (Views: 89.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:09:26 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.5ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 153ms (Views: 127.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:09:29 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  Rendered outfits/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 74ms (Views: 68.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:09:51 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 95ms (Views: 89.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:10:22 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 58ms (Views: 53.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:14:44 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 58ms (Views: 51.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-20 21:14:46 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:15:01 -0500
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (23.6ms)
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (72.2ms)
+Completed 200 OK in 376ms (Views: 325.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:15:42 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 71ms (Views: 48.3ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:19:56 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  Rendered outfits/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:23:45 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.9ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (2.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (13.6ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  Rendered outfits/index.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 111ms (Views: 90.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:24:28 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.8ms)
+  Rendered outfits/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:29:01 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.1ms)
+  Rendered outfits/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 64ms (Views: 58.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:32:34 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.8ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  Rendered outfits/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 138ms (Views: 133.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:33:06 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:33:29 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:33:52 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 59ms (Views: 53.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:34:22 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 54ms (Views: 48.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:35:22 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 67ms (Views: 62.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:35:34 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 77ms (Views: 71.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:35:35 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 62ms (Views: 55.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:35:43 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:35:56 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (3.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (13.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 71ms (Views: 62.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:36:20 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:37:08 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  Rendered outfits/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 55ms (Views: 48.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:37:35 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 56ms (Views: 42.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:37:47 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.8ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (1.1ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (6.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 51ms (Views: 43.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:39:17 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:40:05 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  Rendered outfits/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:04 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 52ms (Views: 46.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:06 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:32 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  Rendered outfits/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 75ms (Views: 68.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:34 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:36 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:42 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.8ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  Rendered outfits/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 43ms (Views: 38.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:41:49 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:42:24 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 85ms (Views: 80.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:42:34 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  Rendered outfits/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 49ms (Views: 43.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:43:52 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:44:28 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.6ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 53ms (Views: 48.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:44:29 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 36ms (Views: 31.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:44:52 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.8ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:44:58 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:45:57 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:46:09 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  Rendered outfits/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 44ms (Views: 39.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:46:22 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 46ms (Views: 40.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:47:03 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:47:49 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  Rendered outfits/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 55ms (Views: 49.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:49:07 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:49:09 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.8ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.5ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:50:43 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 60ms (Views: 54.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:50:56 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:50:59 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:51:04 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 37ms (Views: 30.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:52:02 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 59ms (Views: 53.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:52:03 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:53:26 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:55:48 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 78ms (Views: 73.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:56:03 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:56:10 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (5.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:56:30 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:56:32 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-20 21:56:39 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:44:11 -0500
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:Clothing> at /Users/JR/GA projects/threadz/app/models/clothing.rb:4)
+  [1m[36mClothing Load (0.6ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (27.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 339ms (Views: 293.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:45:12 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.6ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  Rendered outfits/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 152ms (Views: 141.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:45:44 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 73ms (Views: 68.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:45:46 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  [1m[36mClothing Load (0.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (2.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  Rendered outfits/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 58ms (Views: 52.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:46:01 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  Rendered outfits/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 78ms (Views: 72.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-21 00:46:16 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  Rendered outfits/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 57ms (Views: 49.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-21 00:46:21 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-21 00:46:37 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:46:38 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (45.9ms)
+  Rendered clothings/new.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 87ms (Views: 82.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:48:04 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (5.2ms)
+  Rendered clothings/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 68ms (Views: 58.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:48:31 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (13.2ms)
+  Rendered clothings/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 116ms (Views: 102.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:49:05 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (4.3ms)
+  Rendered clothings/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:50:23 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (3.2ms)
+  Rendered clothings/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:51:00 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (4.0ms)
+  Rendered clothings/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:51:20 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (3.7ms)
+  Rendered clothings/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 52ms (Views: 43.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:51:31 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (3.6ms)
+  Rendered clothings/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:51:47 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (3.5ms)
+  Rendered clothings/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 46ms (Views: 40.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:52:28 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (5.4ms)
+  Rendered clothings/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 50ms (Views: 46.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/outfits/new" for 127.0.0.1 at 2017-11-21 00:52:42 -0500
+Processing by OutfitsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/new.html.erb within layouts/application
+  Rendered partials/_outfit_form.html.erb (3.2ms)
+  Rendered outfits/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 57ms (Views: 53.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:53:01 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (5.2ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (12.3ms)
+  Rendered clothings/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 122ms (Views: 111.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:53:26 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.5ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (4.2ms)
+  Rendered clothings/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 41ms (Views: 33.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clothings/new" for 127.0.0.1 at 2017-11-21 00:54:02 -0500
+Processing by ClothingsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/new.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  Rendered partials/_clothing_form.html.erb (3.4ms)
+  Rendered clothings/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:54:43 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.9ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (7.4ms)
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 65ms (Views: 59.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:55:22 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:55:32 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  [1m[36mClothing Load (0.8ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (3.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  Rendered outfits/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 69ms (Views: 63.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:55:55 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 59ms (Views: 53.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:58:11 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 52ms (Views: 47.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:58:40 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 79ms (Views: 72.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:59:02 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.6ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 49ms (Views: 44.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:59:34 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  Rendered outfits/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 63ms (Views: 57.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 00:59:54 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.4ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.8ms)
+  Rendered outfits/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 63ms (Views: 58.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:00:05 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  Rendered outfits/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 58ms (Views: 49.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:00:58 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 62ms (Views: 56.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:01:13 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.0ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.7ms)
+  Rendered outfits/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 83ms (Views: 77.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:01:20 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.9ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.3ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (2.0ms)
+  Rendered outfits/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 103ms (Views: 98.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:01:33 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (20.3ms)
+  Rendered outfits/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 71ms (Views: 63.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:02:38 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.1ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.7ms)
+  Rendered outfits/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 40.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:04:04 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  Rendered outfits/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/JR/GA projects/threadz/app/views/outfits/show.html.erb:14: syntax error, unexpected ')', expecting '}'
+ :html => {:class => "submit") );@output_buffer.safe_append=
+                              ^
+/Users/JR/GA projects/threadz/app/views/outfits/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/JR/GA projects/threadz/app/views/outfits/show.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/outfits/show.html.erb:14: syntax error, unexpected ')', expecting '}'
+app/views/outfits/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/outfits/show.html.erb:27: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:04:16 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.5ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (5.2ms)
+  Rendered outfits/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:06:17 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.4ms)
+  Rendered outfits/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 59ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:06:23 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.3ms)
+  Rendered outfits/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:06:36 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.5ms)
+  Rendered outfits/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:08:58 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.1ms)
+  Rendered outfits/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:12:09 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.6ms)
+  Rendered outfits/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/outfits/2" for 127.0.0.1 at 2017-11-21 01:12:24 -0500
+Processing by OutfitsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.1ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering outfits/show.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (3.8ms)
+  Rendered outfits/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 91ms (Views: 77.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-21 01:12:39 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-21 01:13:37 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.3ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 72ms (Views: 66.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clothings" for 127.0.0.1 at 2017-11-21 01:14:06 -0500
+Processing by ClothingsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering clothings/index.html.erb within layouts/application
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings"[0m
+  [1m[36mOutfit Load (0.2ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Outfit Load (0.0ms)[0m  [1m[34mSELECT  "outfits".* FROM "outfits" WHERE "outfits"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered clothings/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:14:19 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.4ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (2.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.2ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (1.1ms)
+  Rendered outfits/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/outfits" for 127.0.0.1 at 2017-11-21 01:14:35 -0500
+Processing by OutfitsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering outfits/index.html.erb within layouts/application
+  [1m[36mOutfit Load (0.7ms)[0m  [1m[34mSELECT "outfits".* FROM "outfits"[0m
+  [1m[36mClothing Load (0.4ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 2]]
+  Rendered partials/_clothing_list.erb (4.8ms)
+  [1m[36mClothing Load (0.3ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 1]]
+  Rendered partials/_clothing_list.erb (1.5ms)
+  [1m[36mClothing Load (0.2ms)[0m  [1m[34mSELECT "clothings".* FROM "clothings" WHERE "clothings"."outfit_id" = $1[0m  [["outfit_id", 4]]
+  Rendered partials/_clothing_list.erb (0.9ms)
+  Rendered outfits/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 52ms (Views: 46.5ms | ActiveRecord: 1.8ms)
+
+

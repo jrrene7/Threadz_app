@@ -9,27 +9,37 @@
   </head>
 
   <body class="align">
-    <nav>
-      <div class="title-container">
-    <h1 class="title">ThreadZ <span><p> "Styling made easy" </p> </span> </h1>
-      </div>
+
+
+      <header>
+          <h1 class="title">ThreadZ </h1>
+           <h2> "Styling made easy" </h2>
+      </header>
+    <main>
+
     <% if @logged_in %>
-    <div class="nav-items" id="sidebar">
-    <%= link_to("Outfits", outfits_path) %> <br>
-    <%= link_to("Clothes", clothings_path) %> <br>
-    <%= link_to("Users", users_path) %> <br>
-    <%= link_to("Logout", logout_path, method: "delete") %> <br>
-  </div>
+  <aside class="left" id="sidebar">
+    <h3><%= link_to("Outfits", outfits_path) %></h3> <br>
+    <h3> <%= link_to("New Outfit", new_outfit_path) %></h3> <br>
+    <h3><%= link_to("Clothes", clothings_path) %></h3> <br>
+    <h3><%= link_to("Add Clothes", new_clothing_path) %></h3> <br>
+    <h3><%= link_to("Users", users_path) %></h3> <br>
+    <h3><%= link_to("Logout", logout_path, method: "delete") %></h3> <br>
+  </aside>
     <% else %>
-  <div class="top-nav-items">
+  <aside class="right">
     <p> Already have an account ? <%= link_to("Log In", login_path) %> </p>
     <p>Dont have an account? <%= link_to("Sign Up", signup_path) %></p>
-  </div>
+  </aside>
 <% end %>
-</nav>
 
-  <div class="container">
+<article class="">
+
     <%= yield %>
-  </div>
+
+</article>
+
+</main>
+
   </body>
 </html>
