@@ -1,2 +1,6 @@
 # Threadz_app
-Closet Inventory Made Simple
+Styling Made Simple
+
+
+
+
